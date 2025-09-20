@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{ name }} -portfolio</title>
+    <meta name="description" content="{{ name }} - {{ wirte_up }}">
+    <meta name="author" content="{{ name }}">
+    
+    <meta property="og:title" content="{{ name }}">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsterrat:ital,wght@0,100..900;rel=stylesheet">
+    <link rel="stylesheet" href="css/modern_normalize.css"/>
+    <link rel="stylesheet" href="css/html5bp.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <meta name="theme-color" content="#fafafa">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180*180" href="/icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container">
+            <div class="header-top flex-responsive">
+                <div class="header-info">
+                    <h1>{{ name }}</h1>
+                    {% if tag %}<h2 class="header-tag">{{ tag }}</h2>{% endif %}
+                    {% if contact.email or contact.telephone or contact.address or contact.country %}
+                    <Address>
+                        <ul class="inline-list flex-responsive">
+                            {% if contact.email %}
+                            <li>
+                                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                            </li>
+                            {% endif %}
+                            {% if contact.telephone %}
+                            <li>
+                                <a href="tel:+{{ contact.telephone | replace('-', '') }}">{{ contact.telephone }}</a>
+                            </li>
+                            {% endif %}
+                            {% if contact.address %}<Li>{{ contact.address }}</Li>{% endif %}
+                            {% if contact.country %}<li>{{ contact.country }}</li>{% endif %}
+                        </ul>
+                    </Address>
+                    {% endif %}
+                    {% if social_links %}
+                    <ul class="inline-list flex-responsive">
+                        {% for l in social_links %}
+                        <li>
+                            <a href="{{ l.tag_1 }}"
+                            rel="noopener noreferrer"
+                            aria-label="{{ l.tag_1 }}"
+                            class="l-with-icon">
+                            {% if l.svg_data %}{{ l.svg_data | safe }}{% endif %}
+                            {{ l.tag_1 }}
+                        </a>
+                    </li>
+                    {% endfor  %}
+                </ul>
+                {% endif %}
+                {% if write_up %}<p class="header-write_up">{{ write_up }}</p>{% endif %}
+                {% if awards %}<p class="header-award">{{ awards }}</p>{% endif %}
+                {% if hobbies %}<p class="header-hobbies">{{ hobbies }}</p>{% endif %}
+            </div>
+        </div>
+    </header>
+    <div class="page-content">
+        <div class="container">
+            <main>
+                {% if work_expenience %}
+                <section>
+                    <h2 class="section-heading">work-experience</h2>
+                    {% for job in work-experience %}
+                </section>
+                <h3>
+                    {% if job.url %}
+                    {{ job.postion }} at <a href="{{ job.url }}">{{ job.company }}</a>
+                    {% else %}
+                    {{ job.postion }} at {{ job.company }}
+                    {% endif %}
+                </h3>
+                {% if job.start_date and job.end_date %}
+                <p class="section_tag">{{ job.start_date  }} - {{ job.end_date }}</p>
+                {% endif %}
+                {% if job.highlights %}
+                <ul>
+                    {% for h in job.highlights %}<li>{{ highlight }}</li>{% endif % }
+                </ul>
+                {% endif %}
+            </section>
+            {% endfor %}
+        </section>
+        {% endif %}
+    </main>
+    
+    <aside>
+        {% if education %}
+        <section>
+            <h2 class="section-heading">Education</h2>
+            {% for edu in education %}
+            <section>
+                <h3>
+                    {% if edu.url %}
+                    <a href="{{ edu.url }}">{{ edu.institution }}</a>
+                    {% else %}
+                    {{ edu.institution }}
+                    {{% endif %}}
+                </h3>
+                {% if edu.location}<p clas="section-label">{{ edu.location }}</p>{% endif %}
+                {% if edu.degrees %}
+                <h4>Degrees</h4>
+                <ul>
+                    {% for d in edu.degrees %}<li>{{ d }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+                {% if edu.honors %}
+                <h4>Honors</h4>
+                <ul>
+                    {% for hon in edu.honors %}<li>{{ hon }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+                {% if edu.years_span %}
+                <p>
+                    {% if edu.years_span %}<span class="block">years of schooling: {{ edu.years_span}}</span>{% endfor %}
+                </p>
+                {% endif %}
+            </section>
+            {% endfor %}
+        </section>
+        {% endif %}
+        {% if languages %}
+        <section>
+            <h2 class="section-heading">Languages</h2>
+            <ul class="unstyled-list">
+                {% for l in languages %}
+                <li>
+                    <h3>{{ l.language }}</h3>
+                    <p class="section-label">{{ l.fluency }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+            </aside>
+</div>
+</div>
+</Address>
+
+</body>
+
+</html> 

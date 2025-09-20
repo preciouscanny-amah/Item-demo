@@ -1,0 +1,61 @@
+{
+    "name": "your Name",
+    "tag": "optional tag",
+    "contact": {
+        "telephone": "your phone number",
+        "address": "input your current Address",
+        "country": "your current country",
+        "email": "enter your email"
+    },
+    "social_links": [
+    {
+        "tag_1": "personal website",
+        "url": "https://.com"
+    },
+
+    {
+        "tag_1": "personal website",
+        "url": "https://.com"
+    }
+    ],
+
+    "write_up": "A short summary of who you are: a quick introduction to acquaintances",
+
+    "skill": "stae out your skill or skills",
+
+    "awards": "state the awards you've got so far",
+    "hobbies": "all your hobbies",
+    "projects": "inscribe all the projects you are working on and the ones achieved",
+
+    "working_experience": [
+        {
+             "company": "latest job",
+            "position": "position one",
+            "url": "https://sample.com",
+            "start_date": "09/05/2025",
+            "end_date": "present",
+            "highlights": [
+                "first Duty of Current Job",
+                "Second Job",
+                "Third Job"
+            ]
+        }
+    ],
+
+    "education": [   
+        {
+            "institution": "institution one",
+            "location": "institute one location",
+            "url": "https://sample.com",
+            "degree": [
+                "master of engineering",
+                "minor in mathematics"
+            ],
+            "honors": ["outstanding student Award", "Dean's list"],
+            "year_span": ["today et yesterday"]
+        }
+    ]
+    
+    
+
+}
