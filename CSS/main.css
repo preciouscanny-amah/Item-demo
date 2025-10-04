@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  color: #222;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+```
+
+---
